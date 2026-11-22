@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Prime Ad Fast-Forward",
+  "version": "1.0.0",
+  "description": "Fast-forward (16x, muted) Prime Video ads you find offensive — by hotkey or keyword match.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.amazon.com/*", "https://www.primevideo.com/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amazon.com/*",
+        "https://www.primevideo.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Prime Ad Fast-Forward"
+  }
+}
